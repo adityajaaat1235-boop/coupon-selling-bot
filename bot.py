@@ -66,8 +66,8 @@ MENU = ReplyKeyboardMarkup(
     [
         [KeyboardButton("🛒 Buy Vouchers")],
         [
-            KeyboardButton("🔥 My Orders", style="primary"),
-            KeyboardButton("❤️ Support", style="primary"),
+            KeyboardButton("🔥 My Orders"),
+            KeyboardButton("❤️ Support"),
         ],
     ],
     resize_keyboard=True,
