@@ -29,8 +29,8 @@ from telegram.ext import (
 
 load_dotenv()
 
-BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
-ADMIN_ID_TEXT = os.getenv("ADMIN_ID", "").strip()
+BOT_TOKEN = os.getenv("8824898321:AAHoMV1mh7q7bfdkXELcmn4eGfpypjj_5l0", "").strip()
+ADMIN_ID_TEXT = os.getenv("8904470199", "").strip()
 UPI_ID = os.getenv("UPI_ID", "").strip()
 UPI_NAME = os.getenv("UPI_NAME", "Voucher Store").strip()
 SUPPORT_USERNAME = os.getenv("SUPPORT_USERNAME", "").strip().lstrip("@")
