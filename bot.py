@@ -64,7 +64,7 @@ log = logging.getLogger("voucher-store")
 
 MENU = ReplyKeyboardMarkup(
     [
-        [KeyboardButton("🛒 Buy Vouchers"))],
+        [KeyboardButton("🛒 Buy Vouchers")],
         [
             KeyboardButton("🔥 My Orders", style="primary"),
             KeyboardButton("❤️ Support", style="primary"),
