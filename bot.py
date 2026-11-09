@@ -29,7 +29,8 @@ from telegram.ext import (
 
 load_dotenv()
 
-BOT_TOKEN = os.getenv("BOT_TOKEN", "").strip()
+BOT_TOKEN = os.getenv("Your token was replaced with a new one. You can use this token to access HTTP API:
+8824898321:AAHoMV1mh7q7bfdkXELcmn4eGfpypjj_5l0", "").strip()
 ADMIN_ID_TEXT = os.getenv("ADMIN_ID", "").strip()
 UPI_ID = os.getenv("UPI_ID", "").strip()
 UPI_NAME = os.getenv("UPI_NAME", "Voucher Store").strip()
