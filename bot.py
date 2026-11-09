@@ -76,11 +76,11 @@ MENU = ReplyKeyboardMarkup(
 
 ADMIN_MENU = ReplyKeyboardMarkup(
     [
-        [KeyboardButton("🛠 Admin Panel", style="primary")],
-        [KeyboardButton("🛒 Buy Vouchers", style="success")],
+        [KeyboardButton("🛠 Admin Panel")],
+        [KeyboardButton("🛒 Buy Vouchers")],
         [
-            KeyboardButton("🔥 My Orders", style="primary"),
-            KeyboardButton("❤️ Support", style="primary"),
+            KeyboardButton("🔥 My Orders"),
+            KeyboardButton("❤️ Support"),
         ],
     ],
     resize_keyboard=True,
@@ -88,13 +88,19 @@ ADMIN_MENU = ReplyKeyboardMarkup(
 )
 
 ADMIN_PANEL = InlineKeyboardMarkup([
-    [InlineKeyboardButton("📢 Broadcast Message", callback_data="admin:broadcast", style="primary")],
-    [InlineKeyboardButton("➕ Add Product", callback_data="admin:addproduct", style="success"),
-     InlineKeyboardButton("🗑 Delete Product", callback_data="admin:deleteproduct", style="danger")],
-    [InlineKeyboardButton("🎟 Add Coupon", callback_data="admin:addcoupon", style="success"),
-     InlineKeyboardButton("🎁 Send Personal Coupon", callback_data="admin:personal_coupon", style="success")],
-    [InlineKeyboardButton("🧾 Pending Payments", callback_data="admin:pending", style="primary"),
-     InlineKeyboardButton("📊 Statistics", callback_data="admin:stats", style="primary")],
+    [InlineKeyboardButton("📢 Broadcast Message", callback_data="admin:broadcast")],
+    [
+        InlineKeyboardButton("➕ Add Product", callback_data="admin:addproduct"),
+        InlineKeyboardButton("🗑 Delete Product", callback_data="admin:deleteproduct"),
+    ],
+    [
+        InlineKeyboardButton("🎟 Add Coupon", callback_data="admin:addcoupon"),
+        InlineKeyboardButton("🎁 Send Personal Coupon", callback_data="admin:personal_coupon"),
+    ],
+    [
+        InlineKeyboardButton("🧾 Pending Payments", callback_data="admin:pending"),
+        InlineKeyboardButton("📊 Statistics", callback_data="admin:stats"),
+    ],
 ])
 
 @contextmanager
@@ -241,14 +247,13 @@ async def show_products(update: Update, context: ContextTypes.DEFAULT_TYPE):
         )
         return
 
-    buttons = []
+       buttons = []
     for p in products:
         available = stock.get(p["id"], 0) > 0 or p["id"] in digital
         if available:
             buttons.append([InlineKeyboardButton(
                 f"🛒 {p['name']} · {fmt(p['price'])}",
                 callback_data=f"buy:{p['id']}",
-                style="success",
             )])
 
     if not buttons:
@@ -489,8 +494,11 @@ async def send_payment_qr(context, chat_id: int, user_id: int, oid: int, status_
         "After payment, tap ⭐️ Verify Paytm Payment and submit your UTR. "
         "Payment is verified before voucher delivery."
     )
-    keyboard = InlineKeyboardMarkup([[
-        InlineKeyboardButton("⭐️ Verify Paytm Payment", callback_data=f"verify:{oid}", style="success")
+        keyboard = InlineKeyboardMarkup([[
+        InlineKeyboardButton(
+            "⭐️ Verify Paytm Payment",
+            callback_data=f"verify:{oid}",
+        )
     ]])
 
     if status_message:
