@@ -29,7 +29,7 @@ from telegram.ext import (
 
 load_dotenv()
 
-BOT_TOKEN = os.getenv("8824898321:AAFitaj3jjctUWHCKGDMaQPoVA6Y7lZWetA", "").strip()
+BOT_TOKEN = os.getenv("8824898321:AAHoMV1mh7q7bfdkXELcmn4eGfpypjj_5l0", "").strip()
 ADMIN_ID_TEXT = os.getenv("8904470199", "").strip()
 UPI_ID = os.getenv("addi id god", "").strip()
 UPI_NAME = os.getenv("aditaE", "Voucher Store").strip()
